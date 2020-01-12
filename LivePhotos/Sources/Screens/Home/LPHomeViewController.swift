@@ -11,28 +11,64 @@ import UIKit
 final class LPHomeViewController: LPBaseViewController, LPRootableViewController {
     typealias RootView = LPHomeRootView
     
-    private var images = [
-        #imageLiteral(resourceName: "cdab193b86e53506966f2a9793c770da"), #imageLiteral(resourceName: "709e38db7637c2bd20f35073a96a45cc")
-    ]
-    
+    private let _photosService: LPLivePhotosService
+
+    private var images: [LPLivePhoto] = []
     private var imageIndex = 0
-    private let animationDuratin: TimeInterval = 0.25
-    private let switchingInterval: TimeInterval = 3
-    private var transition = CATransition()
     
+    // MARK: - Lifecycle
+
+    init(photosService: LPLivePhotosService) {
+        _photosService = photosService
+        
+        super.init(LPHomeViewController.self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController!.navigationBar.isHidden = true
-        setImage(for: imageIndex)
-        
-    }
-    
-    
-    private func setImage(for index: Int) {
-        let image = images[index]
-        rootView.setImage(image)
+        images = _photosService.fetchPhotos()
+        setupUI()
     }
 
 }
 
+// MARK: - Setup methods
+
+private extension LPHomeViewController {
+    
+    func setupNavigationBar() {
+        navigationController!.navigationBar.isHidden = true
+    }
+    
+    func setupUI() {
+        setupNavigationBar()
+        setImage(for: imageIndex)
+    }
+    
+}
+
+// MARK: - Set methods
+
+private extension LPHomeViewController {
+    
+    func setImage(for index: Int) {
+        let image = images[index]
+    }
+    
+}
+
+
+// MARK: - User interactions
+
+private extension LPHomeViewController {
+    
+    @IBAction func actSwipeLeft(_ sender: Any) {
+        print(#function)
+    }
+    
+    @IBAction func actSwipeRight(_ sender: Any) {
+        print(#function)
+    }
+    
+}

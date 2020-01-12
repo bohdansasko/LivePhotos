@@ -14,10 +14,25 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        setupWindow()
+        
         return true
     }
 
-
 }
 
+// MARK: - Setup methods
+
+private extension AppDelegate {
+    
+    func setupWindow() {
+        let homeViewController = LPHomeViewController(photosService: LPFakeLivePhotosService())
+        let rootNavigation = LPBaseNavigationController(rootViewController: homeViewController)
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.rootViewController = rootNavigation
+        window!.makeKeyAndVisible()
+    }
+    
+}

@@ -9,17 +9,20 @@
 /* Begin PBXBuildFile section */
 		97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348FFC23CB5391006D8F16 /* AppDelegate.swift */; };
 		9734900123CB5391006D8F16 /* LPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734900023CB5391006D8F16 /* LPHomeViewController.swift */; };
-		9734900423CB5391006D8F16 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9734900223CB5391006D8F16 /* Home.storyboard */; };
 		9734900623CB5393006D8F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9734900523CB5393006D8F16 /* Assets.xcassets */; };
 		9734900923CB5393006D8F16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9734900723CB5393006D8F16 /* LaunchScreen.storyboard */; };
 		9734901123CB5672006D8F16 /* LPBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734901023CB5672006D8F16 /* LPBaseViewController.swift */; };
-		9734901923CB638D006D8F16 /* LPPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734901723CB638D006D8F16 /* LPPhotoViewController.swift */; };
-		9734901A23CB638D006D8F16 /* LPPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9734901823CB638D006D8F16 /* LPPhotoViewController.xib */; };
 		9734901F23CB6403006D8F16 /* LPHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9734901E23CB6403006D8F16 /* LPHomeViewController.xib */; };
 		97C4474823CB663D009F22B5 /* LPRootableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474723CB663D009F22B5 /* LPRootableViewController.swift */; };
 		97C4474B23CB66B2009F22B5 /* LPHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474A23CB66B2009F22B5 /* LPHomeRootView.swift */; };
-		97C4474D23CB66CE009F22B5 /* LPPhotoRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474C23CB66CE009F22B5 /* LPPhotoRootView.swift */; };
 		97C4474F23CB66E7009F22B5 /* LPBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474E23CB66E7009F22B5 /* LPBaseView.swift */; };
+		97C4475223CB7D70009F22B5 /* LPPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475123CB7D70009F22B5 /* LPPhotoView.swift */; };
+		97C4475423CB7D7A009F22B5 /* LPPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C4475323CB7D7A009F22B5 /* LPPhotoView.xib */; };
+		97C4475823CB84F1009F22B5 /* LPPhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475723CB84F1009F22B5 /* LPPhotosService.swift */; };
+		97C4475A23CB870E009F22B5 /* LPLivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475923CB870E009F22B5 /* LPLivePhoto.swift */; };
+		97C4475F23CB8743009F22B5 /* LPFakeLivePhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475E23CB8743009F22B5 /* LPFakeLivePhotosService.swift */; };
+		97C4476123CB8A05009F22B5 /* LPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4476023CB8A05009F22B5 /* LPBaseNavigationController.swift */; };
+		97C4476523CB8DD1009F22B5 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4476423CB8DD1009F22B5 /* UIViewController+Ext.swift */; };
 		FE5EDBC4515B1D47DADD5D77 /* Pods_LivePhotos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E93C2C2BBF715A3EAF7BA74D /* Pods_LivePhotos.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,18 +30,21 @@
 		97348FF923CB5391006D8F16 /* LivePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97348FFC23CB5391006D8F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9734900023CB5391006D8F16 /* LPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeViewController.swift; sourceTree = "<group>"; };
-		9734900323CB5391006D8F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		9734900523CB5393006D8F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9734900823CB5393006D8F16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9734900A23CB5393006D8F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9734901023CB5672006D8F16 /* LPBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPBaseViewController.swift; sourceTree = "<group>"; };
-		9734901723CB638D006D8F16 /* LPPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotoViewController.swift; sourceTree = "<group>"; };
-		9734901823CB638D006D8F16 /* LPPhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LPPhotoViewController.xib; sourceTree = "<group>"; };
 		9734901E23CB6403006D8F16 /* LPHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LPHomeViewController.xib; sourceTree = "<group>"; };
 		97C4474723CB663D009F22B5 /* LPRootableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRootableViewController.swift; sourceTree = "<group>"; };
 		97C4474A23CB66B2009F22B5 /* LPHomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeRootView.swift; sourceTree = "<group>"; };
-		97C4474C23CB66CE009F22B5 /* LPPhotoRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotoRootView.swift; sourceTree = "<group>"; };
 		97C4474E23CB66E7009F22B5 /* LPBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPBaseView.swift; sourceTree = "<group>"; };
+		97C4475123CB7D70009F22B5 /* LPPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotoView.swift; sourceTree = "<group>"; };
+		97C4475323CB7D7A009F22B5 /* LPPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LPPhotoView.xib; sourceTree = "<group>"; };
+		97C4475723CB84F1009F22B5 /* LPPhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotosService.swift; sourceTree = "<group>"; };
+		97C4475923CB870E009F22B5 /* LPLivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPLivePhoto.swift; sourceTree = "<group>"; };
+		97C4475E23CB8743009F22B5 /* LPFakeLivePhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPFakeLivePhotosService.swift; sourceTree = "<group>"; };
+		97C4476023CB8A05009F22B5 /* LPBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPBaseNavigationController.swift; sourceTree = "<group>"; };
+		97C4476423CB8DD1009F22B5 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		A4BC692A31E3AB01F869D540 /* Pods-LivePhotos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhotos.release.xcconfig"; path = "Target Support Files/Pods-LivePhotos/Pods-LivePhotos.release.xcconfig"; sourceTree = "<group>"; };
 		E0E2867EC957F36950B337D3 /* Pods-LivePhotos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivePhotos.debug.xcconfig"; path = "Target Support Files/Pods-LivePhotos/Pods-LivePhotos.debug.xcconfig"; sourceTree = "<group>"; };
 		E93C2C2BBF715A3EAF7BA74D /* Pods_LivePhotos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivePhotos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,10 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				9734900723CB5393006D8F16 /* LaunchScreen.storyboard */,
-				9734900223CB5391006D8F16 /* Home.storyboard */,
 				97C4474923CB6642009F22B5 /* Base */,
 				9734901D23CB63B7006D8F16 /* Home */,
-				9734901B23CB63A8006D8F16 /* Photo */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -109,23 +113,16 @@
 			children = (
 				97348FFC23CB5391006D8F16 /* AppDelegate.swift */,
 				9734901223CB57AB006D8F16 /* Screens */,
+				97C4475623CB8497009F22B5 /* DataLayer */,
+				97C4476223CB8DA0009F22B5 /* Extensions */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		9734901B23CB63A8006D8F16 /* Photo */ = {
-			isa = PBXGroup;
-			children = (
-				97C4474C23CB66CE009F22B5 /* LPPhotoRootView.swift */,
-				9734901723CB638D006D8F16 /* LPPhotoViewController.swift */,
-				9734901823CB638D006D8F16 /* LPPhotoViewController.xib */,
-			);
-			path = Photo;
 			sourceTree = "<group>";
 		};
 		9734901D23CB63B7006D8F16 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				97C4475023CB7D54009F22B5 /* Photo */,
 				97C4474A23CB66B2009F22B5 /* LPHomeRootView.swift */,
 				9734900023CB5391006D8F16 /* LPHomeViewController.swift */,
 				9734901E23CB6403006D8F16 /* LPHomeViewController.xib */,
@@ -139,8 +136,52 @@
 				97C4474E23CB66E7009F22B5 /* LPBaseView.swift */,
 				9734901023CB5672006D8F16 /* LPBaseViewController.swift */,
 				97C4474723CB663D009F22B5 /* LPRootableViewController.swift */,
+				97C4476023CB8A05009F22B5 /* LPBaseNavigationController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		97C4475023CB7D54009F22B5 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				97C4475123CB7D70009F22B5 /* LPPhotoView.swift */,
+				97C4475323CB7D7A009F22B5 /* LPPhotoView.xib */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		97C4475623CB8497009F22B5 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				97C4475B23CB8726009F22B5 /* PhotosService */,
+				97C4475923CB870E009F22B5 /* LPLivePhoto.swift */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		97C4475B23CB8726009F22B5 /* PhotosService */ = {
+			isa = PBXGroup;
+			children = (
+				97C4475723CB84F1009F22B5 /* LPPhotosService.swift */,
+				97C4475E23CB8743009F22B5 /* LPFakeLivePhotosService.swift */,
+			);
+			path = PhotosService;
+			sourceTree = "<group>";
+		};
+		97C4476223CB8DA0009F22B5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				97C4476323CB8DB5009F22B5 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		97C4476323CB8DB5009F22B5 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				97C4476423CB8DD1009F22B5 /* UIViewController+Ext.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		D8BA24D165687922A31E8919 /* Frameworks */ = {
@@ -223,8 +264,7 @@
 				9734901F23CB6403006D8F16 /* LPHomeViewController.xib in Resources */,
 				9734900923CB5393006D8F16 /* LaunchScreen.storyboard in Resources */,
 				9734900623CB5393006D8F16 /* Assets.xcassets in Resources */,
-				9734900423CB5391006D8F16 /* Home.storyboard in Resources */,
-				9734901A23CB638D006D8F16 /* LPPhotoViewController.xib in Resources */,
+				97C4475423CB7D7A009F22B5 /* LPPhotoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,28 +317,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C4476523CB8DD1009F22B5 /* UIViewController+Ext.swift in Sources */,
+				97C4475823CB84F1009F22B5 /* LPPhotosService.swift in Sources */,
+				97C4475223CB7D70009F22B5 /* LPPhotoView.swift in Sources */,
+				97C4475A23CB870E009F22B5 /* LPLivePhoto.swift in Sources */,
 				9734901123CB5672006D8F16 /* LPBaseViewController.swift in Sources */,
-				97C4474D23CB66CE009F22B5 /* LPPhotoRootView.swift in Sources */,
 				9734900123CB5391006D8F16 /* LPHomeViewController.swift in Sources */,
+				97C4475F23CB8743009F22B5 /* LPFakeLivePhotosService.swift in Sources */,
 				97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */,
 				97C4474B23CB66B2009F22B5 /* LPHomeRootView.swift in Sources */,
 				97C4474F23CB66E7009F22B5 /* LPBaseView.swift in Sources */,
-				9734901923CB638D006D8F16 /* LPPhotoViewController.swift in Sources */,
 				97C4474823CB663D009F22B5 /* LPRootableViewController.swift in Sources */,
+				97C4476123CB8A05009F22B5 /* LPBaseNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9734900223CB5391006D8F16 /* Home.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9734900323CB5391006D8F16 /* Base */,
-			);
-			name = Home.storyboard;
-			sourceTree = "<group>";
-		};
 		9734900723CB5393006D8F16 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

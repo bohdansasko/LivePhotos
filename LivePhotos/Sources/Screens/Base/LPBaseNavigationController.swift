@@ -1,5 +1,5 @@
 //
-//  LPPhotoViewController.swift
+//  LPBaseNavigationController.swift
 //  LivePhotos
 //
 //  Created by Office Mac on 1/12/20.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class LPPhotoViewController: LPBaseViewController, LPRootableViewController {
-    typealias RootView = LPPhotoRootView
+final class LPBaseNavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
 
 }
