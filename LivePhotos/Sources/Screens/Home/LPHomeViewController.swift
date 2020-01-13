@@ -84,7 +84,7 @@ private extension LPHomeViewController {
             }
             .catch { [weak self] err in
                 guard let self = self else { return }
-                let errMsg = LPErrorMessage(title: "Loading Photos", message: err.localizedDescription)
+                let errMsg = LPErrorMessage(title: "LOADING_PHOTOS".localized, message: err.localizedDescription)
                 self.handleError(errMsg)
             }.finally { [weak self] in
                 self?.rootView.activityIndicator.stopAnimating()

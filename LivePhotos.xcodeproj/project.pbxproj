@@ -12,6 +12,7 @@
 		2084E51E23CD204F0018358E /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E51D23CD204F0018358E /* Logger.swift */; };
 		2084E52023CD207D0018358E /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E51F23CD207C0018358E /* Date+Ext.swift */; };
 		2084E52223CD21930018358E /* LPErrorTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52123CD21930018358E /* LPErrorTraits.swift */; };
+		2084E52423CD22420018358E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2084E52323CD22420018358E /* Localizable.strings */; };
 		97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348FFC23CB5391006D8F16 /* AppDelegate.swift */; };
 		9734900123CB5391006D8F16 /* LPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734900023CB5391006D8F16 /* LPHomeViewController.swift */; };
 		9734900623CB5393006D8F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9734900523CB5393006D8F16 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		2084E51D23CD204F0018358E /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2084E51F23CD207C0018358E /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		2084E52123CD21930018358E /* LPErrorTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPErrorTraits.swift; sourceTree = "<group>"; };
+		2084E52323CD22420018358E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		97348FF923CB5391006D8F16 /* LivePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97348FFC23CB5391006D8F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9734900023CB5391006D8F16 /* LPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				9734900523CB5393006D8F16 /* Assets.xcassets */,
 				9734900A23CB5393006D8F16 /* Info.plist */,
+				2084E52323CD22420018358E /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -130,8 +133,8 @@
 		9734901423CB57DF006D8F16 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2084E51D23CD204F0018358E /* Logger.swift */,
 				97348FFC23CB5391006D8F16 /* AppDelegate.swift */,
+				2084E51D23CD204F0018358E /* Logger.swift */,
 				9734901223CB57AB006D8F16 /* Screens */,
 				97C4475623CB8497009F22B5 /* DataLayer */,
 				97C4476223CB8DA0009F22B5 /* Extensions */,
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2084E52423CD22420018358E /* Localizable.strings in Resources */,
 				9734901F23CB6403006D8F16 /* LPHomeViewController.xib in Resources */,
 				9734900923CB5393006D8F16 /* LaunchScreen.storyboard in Resources */,
 				9734900623CB5393006D8F16 /* Assets.xcassets in Resources */,
