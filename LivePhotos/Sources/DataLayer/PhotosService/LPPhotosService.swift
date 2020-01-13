@@ -6,8 +6,8 @@
 //  Copyright © 2020 Vinso. All rights reserved.
 //
 
-import Foundation
+import PromiseKit
 
 protocol LPLivePhotosService {
-    func fetchPhotos() -> [LPLivePhoto]
+    func fetchPhotos() -> Promise<[LPLivePhoto]>
 }

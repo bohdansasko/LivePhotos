@@ -21,3 +21,9 @@ class LPBaseViewController: UIViewController {
     }
     
 }
+
+// MARK: - LPErrorTraits
+
+extension LPBaseViewController: LPErrorTraits {
+    
+}

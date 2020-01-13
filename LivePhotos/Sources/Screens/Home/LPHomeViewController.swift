@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 final class LPHomeViewController: LPBaseViewController, LPRootableViewController {
     typealias RootView = LPHomeRootView
@@ -26,9 +27,9 @@ final class LPHomeViewController: LPBaseViewController, LPRootableViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        images = _photosService.fetchPhotos()
-        setupUI()
+    
+        setupNavigationBar()
+        fetchPhotos()
     }
 
 }
@@ -41,11 +42,6 @@ private extension LPHomeViewController {
         navigationController!.navigationBar.isHidden = true
     }
     
-    func setupUI() {
-        setupNavigationBar()
-        setImage(for: imageIndex)
-    }
-    
 }
 
 // MARK: - Set methods
@@ -54,6 +50,7 @@ private extension LPHomeViewController {
     
     func setImage(for index: Int) {
         let image = images[index]
+        log.debug(image)
     }
     
 }
@@ -69,6 +66,29 @@ private extension LPHomeViewController {
     
     @IBAction func actSwipeRight(_ sender: Any) {
         print(#function)
+    }
+    
+}
+
+// MARK: - API
+
+private extension LPHomeViewController {
+    
+    func fetchPhotos() {
+        rootView.activityIndicator.startAnimating()
+        _photosService.fetchPhotos()
+            .done { [weak self] photos in
+                guard let self = self else { return }
+                self.images = photos
+                self.setImage(for: self.imageIndex)
+            }
+            .catch { [weak self] err in
+                guard let self = self else { return }
+                let errMsg = LPErrorMessage(title: "Loading Photos", message: err.localizedDescription)
+                self.handleError(errMsg)
+            }.finally { [weak self] in
+                self?.rootView.activityIndicator.stopAnimating()
+            }
     }
     
 }

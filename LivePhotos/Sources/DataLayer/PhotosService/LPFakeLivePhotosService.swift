@@ -6,12 +6,17 @@
 //  Copyright © 2020 Vinso. All rights reserved.
 //
 
-import Foundation
+import PromiseKit
 
 final class LPFakeLivePhotosService: LPLivePhotosService {
     
-    func fetchPhotos() -> [LPLivePhoto] {
-        return LPLivePhoto.mockPhotos()
+    func fetchPhotos() -> Promise<[LPLivePhoto]> {
+        return Promise { seal in
+            let bgQueue = DispatchQueue.global(qos: .background)
+            bgQueue.asyncAfter(deadline: .now() + .seconds(2)) {
+                seal.fulfill(LPLivePhoto.mockPhotos())
+            }
+        }
     }
     
 }

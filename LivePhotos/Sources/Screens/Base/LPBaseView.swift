@@ -10,4 +10,10 @@ import UIKit
 
 class LPBaseView: UIView {
     
+    let activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .whiteLarge)
+        indicator.hidesWhenStopped = true
+        return indicator
+    }()
+    
 }
