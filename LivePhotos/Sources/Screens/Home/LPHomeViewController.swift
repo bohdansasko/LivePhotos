@@ -28,33 +28,25 @@ final class LPHomeViewController: LPBaseViewController, LPRootableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        setupNavigationBar()
+        setupUI()
         fetchPhotos()
     }
-
+    
 }
 
 // MARK: - Setup methods
 
 private extension LPHomeViewController {
     
+    func setupUI() {
+        setupNavigationBar()
+    }
+    
     func setupNavigationBar() {
         navigationController!.navigationBar.isHidden = true
     }
     
 }
-
-// MARK: - Set methods
-
-private extension LPHomeViewController {
-    
-    func setImage(for index: Int) {
-        let image = images[index]
-        log.debug(image)
-    }
-    
-}
-
 
 // MARK: - User interactions
 
@@ -80,7 +72,7 @@ private extension LPHomeViewController {
             .done { [weak self] photos in
                 guard let self = self else { return }
                 self.images = photos
-                self.setImage(for: self.imageIndex)
+                self.rootView.setImages(photos)
             }
             .catch { [weak self] err in
                 guard let self = self else { return }
