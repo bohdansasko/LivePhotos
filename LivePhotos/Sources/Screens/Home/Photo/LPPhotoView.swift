@@ -6,13 +6,22 @@
 //  Copyright © 2020 Vinso. All rights reserved.
 //
 
-import UIKit
+import PhotosUI
+
+final class LPLivePhotoView: PHLivePhotoView {
+    
+}
 
 final class LPPhotoView: LPBaseView {
-    @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var livePhotoView: LPLivePhotoView!
     
-    var image: UIImage? {
-        set { imageView.image = newValue }
-        get { return imageView.image }
+    var livePhoto: PHLivePhoto? {
+        set { livePhotoView.livePhoto = newValue }
+        get { return livePhotoView.livePhoto }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
     }
 }

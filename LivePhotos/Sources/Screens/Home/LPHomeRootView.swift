@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import PhotosUI
 
 final class LPHomeRootView: LPBaseView {
     
@@ -25,9 +26,7 @@ final class LPHomeRootView: LPBaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let scrollViewFrame = frameForPagingScrollView()
-        pagingScrollView.frame = scrollViewFrame
-        pagingScrollView.contentSize = contentSizeForPagingScrollView()
+        pagingScrollView.contentSize.width = contentSizeForPagingScrollView().width
     }
     
 }
@@ -35,22 +34,25 @@ final class LPHomeRootView: LPBaseView {
 // MARK: - Setup
 
 private extension LPHomeRootView {
-        
+    
     func setupLayout() {
-        backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3607843137, blue: 0.4, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1098039216, blue: 0.1176470588, alpha: 1)
         
         setupScrollView()
         setupActivityIndicator()
     }
 
     func setupScrollView() {
-        let scrollViewFrame = frameForPagingScrollView()
-        pagingScrollView = UIScrollView(frame: scrollViewFrame)
+        pagingScrollView = UIScrollView()
         addSubview(pagingScrollView)
-        pagingScrollView.backgroundColor = #colorLiteral(red: 0.3607843137, green: 0.3607843137, blue: 0.4, alpha: 1)
+        pagingScrollView.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(-kPagePadding)
+            $0.width.equalToSuperview().offset(2 * kPagePadding)
+            $0.top.bottom.equalToSuperview()
+        }
+        pagingScrollView.backgroundColor = backgroundColor
         pagingScrollView.showsVerticalScrollIndicator = false
         pagingScrollView.showsHorizontalScrollIndicator = false
-        pagingScrollView.alwaysBounceVertical = false
         pagingScrollView.isPagingEnabled = true
         pagingScrollView.contentSize = contentSizeForPagingScrollView()
     }
@@ -71,8 +73,8 @@ extension LPHomeRootView {
     func setImages(_ images: [LPLivePhoto]) {
         images.enumerated().forEach { (offset, photo) in
             let page = LPPhotoView.loadViewFromNib()
-            configure(page, with: photo, for: offset)
             pagingScrollView.addSubview(page)
+            configure(page, with: photo, for: offset)
         }
     }
     
@@ -102,8 +104,15 @@ private extension LPHomeRootView {
 private extension LPHomeRootView {
     
     func configure(_ page: LPPhotoView, with photo: LPLivePhoto, for index: Int) {
-        page.frame = frameForPage(at: index)
-        page.image = UIImage(named: photo.imageUrl)
+        let frame = frameForPage(at: index)
+        page.snp.makeConstraints {
+            $0.left.equalToSuperview().offset(frame.origin.x)
+            $0.width.equalTo(frame.width)
+            $0.height.equalTo(pagingScrollView.frameLayoutGuide)
+        }
+        let livePhoto = PHLivePhoto()
+        livePhoto.
+//        page.livePhoto = UIImage(named: photo.imageUrl)
     }
     
     func frameForPage(at index: Int) -> CGRect {
