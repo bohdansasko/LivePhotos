@@ -20,8 +20,4 @@ final class LPPhotoView: LPBaseView {
         get { return livePhotoView.livePhoto }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
 }

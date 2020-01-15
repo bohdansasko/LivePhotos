@@ -15,6 +15,7 @@
 		2084E52423CD22420018358E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2084E52323CD22420018358E /* Localizable.strings */; };
 		2084E52623CD31A20018358E /* LPPhotosScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52523CD31A20018358E /* LPPhotosScrollView.swift */; };
 		2084E52823CD35E60018358E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52723CD35E60018358E /* UIView+Ext.swift */; };
+		20DEF55423CF9C8B00560EF0 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */; };
 		97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348FFC23CB5391006D8F16 /* AppDelegate.swift */; };
 		9734900123CB5391006D8F16 /* LPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734900023CB5391006D8F16 /* LPHomeViewController.swift */; };
 		9734900623CB5393006D8F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9734900523CB5393006D8F16 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		2084E52323CD22420018358E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2084E52523CD31A20018358E /* LPPhotosScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotosScrollView.swift; sourceTree = "<group>"; };
 		2084E52723CD35E60018358E /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
 		97348FF923CB5391006D8F16 /* LivePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97348FFC23CB5391006D8F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9734900023CB5391006D8F16 /* LPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		20DEF55223CF9C3C00560EF0 /* ThirdLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */,
+			);
+			path = ThirdLibraries;
+			sourceTree = "<group>";
+		};
 		97348FF023CB5391006D8F16 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		97348FFB23CB5391006D8F16 /* LivePhotos */ = {
 			isa = PBXGroup;
 			children = (
+				20DEF55223CF9C3C00560EF0 /* ThirdLibraries */,
 				9734901423CB57DF006D8F16 /* Sources */,
 				9734901323CB57D0006D8F16 /* Resources */,
 			);
@@ -358,6 +369,7 @@
 				97C4475A23CB870E009F22B5 /* LPLivePhoto.swift in Sources */,
 				9734901123CB5672006D8F16 /* LPBaseViewController.swift in Sources */,
 				9734900123CB5391006D8F16 /* LPHomeViewController.swift in Sources */,
+				20DEF55423CF9C8B00560EF0 /* LivePhoto.swift in Sources */,
 				97C4475F23CB8743009F22B5 /* LPFakeLivePhotosService.swift in Sources */,
 				97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */,
 				2084E52223CD21930018358E /* LPErrorTraits.swift in Sources */,

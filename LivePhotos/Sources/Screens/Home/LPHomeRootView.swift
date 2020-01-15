@@ -110,8 +110,8 @@ private extension LPHomeRootView {
             $0.width.equalTo(frame.width)
             $0.height.equalTo(pagingScrollView.frameLayoutGuide)
         }
-        let livePhoto = PHLivePhoto()
-        livePhoto.
+        
+//        let livePhoto = PHLivePhoto()
 //        page.livePhoto = UIImage(named: photo.imageUrl)
     }
     
