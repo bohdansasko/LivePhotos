@@ -7,7 +7,8 @@
 //
 
 import PromiseKit
+import PhotosUI
 
 protocol LPLivePhotosService {
-    func fetchPhotos() -> Promise<[LPLivePhoto]>
+    func fetchPhotos() -> Promise<[PHLivePhoto]>
 }

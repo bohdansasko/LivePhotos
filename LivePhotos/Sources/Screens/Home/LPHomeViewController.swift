@@ -71,7 +71,7 @@ private extension LPHomeViewController {
         _photosService.fetchPhotos()
             .done { [weak self] photos in
                 guard let self = self else { return }
-                self.images = photos
+//                self.images = photos
                 self.rootView.setImages(photos)
             }
             .catch { [weak self] err in

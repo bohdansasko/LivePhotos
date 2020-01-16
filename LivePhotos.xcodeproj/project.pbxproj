@@ -15,7 +15,11 @@
 		2084E52423CD22420018358E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2084E52323CD22420018358E /* Localizable.strings */; };
 		2084E52623CD31A20018358E /* LPPhotosScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52523CD31A20018358E /* LPPhotosScrollView.swift */; };
 		2084E52823CD35E60018358E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52723CD35E60018358E /* UIView+Ext.swift */; };
+		209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg */; };
+		209BD17623D0232A009E4E85 /* cdab193b86e53506966f2a9793c770da.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17423D0232A009E4E85 /* cdab193b86e53506966f2a9793c770da.jpg */; };
 		20DEF55423CF9C8B00560EF0 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */; };
+		20DEF55C23CFA3AB00560EF0 /* 0e21e80d8b50a37f93caa380fe6d0a70.mov in Resources */ = {isa = PBXBuildFile; fileRef = 20DEF55823CFA3AB00560EF0 /* 0e21e80d8b50a37f93caa380fe6d0a70.mov */; };
+		20DEF55D23CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov in Resources */ = {isa = PBXBuildFile; fileRef = 20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */; };
 		97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348FFC23CB5391006D8F16 /* AppDelegate.swift */; };
 		9734900123CB5391006D8F16 /* LPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734900023CB5391006D8F16 /* LPHomeViewController.swift */; };
 		9734900623CB5393006D8F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9734900523CB5393006D8F16 /* Assets.xcassets */; };
@@ -44,7 +48,11 @@
 		2084E52323CD22420018358E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2084E52523CD31A20018358E /* LPPhotosScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotosScrollView.swift; sourceTree = "<group>"; };
 		2084E52723CD35E60018358E /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 709e38db7637c2bd20f35073a96a45cc.jpg; sourceTree = "<group>"; };
+		209BD17423D0232A009E4E85 /* cdab193b86e53506966f2a9793c770da.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cdab193b86e53506966f2a9793c770da.jpg; sourceTree = "<group>"; };
 		20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
+		20DEF55823CFA3AB00560EF0 /* 0e21e80d8b50a37f93caa380fe6d0a70.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 0e21e80d8b50a37f93caa380fe6d0a70.mov; sourceTree = "<group>"; };
+		20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 12e56c1d1137fb114e360b7a9970f3f9.mov; sourceTree = "<group>"; };
 		97348FF923CB5391006D8F16 /* LivePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97348FFC23CB5391006D8F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9734900023CB5391006D8F16 /* LPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +105,18 @@
 			path = ThirdLibraries;
 			sourceTree = "<group>";
 		};
+		20DEF55523CFA3AB00560EF0 /* LS */ = {
+			isa = PBXGroup;
+			children = (
+				209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg */,
+				209BD17423D0232A009E4E85 /* cdab193b86e53506966f2a9793c770da.jpg */,
+				20DEF55823CFA3AB00560EF0 /* 0e21e80d8b50a37f93caa380fe6d0a70.mov */,
+				20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */,
+			);
+			name = LS;
+			path = Resources/LS;
+			sourceTree = "<group>";
+		};
 		97348FF023CB5391006D8F16 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				20DEF55223CF9C3C00560EF0 /* ThirdLibraries */,
+				20DEF55523CFA3AB00560EF0 /* LS */,
 				9734901423CB57DF006D8F16 /* Sources */,
 				9734901323CB57D0006D8F16 /* Resources */,
 			);
@@ -306,9 +327,13 @@
 			files = (
 				2084E52423CD22420018358E /* Localizable.strings in Resources */,
 				9734901F23CB6403006D8F16 /* LPHomeViewController.xib in Resources */,
+				209BD17623D0232A009E4E85 /* cdab193b86e53506966f2a9793c770da.jpg in Resources */,
+				20DEF55D23CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov in Resources */,
 				9734900923CB5393006D8F16 /* LaunchScreen.storyboard in Resources */,
 				9734900623CB5393006D8F16 /* Assets.xcassets in Resources */,
+				209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg in Resources */,
 				97C4475423CB7D7A009F22B5 /* LPPhotoView.xib in Resources */,
+				20DEF55C23CFA3AB00560EF0 /* 0e21e80d8b50a37f93caa380fe6d0a70.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
