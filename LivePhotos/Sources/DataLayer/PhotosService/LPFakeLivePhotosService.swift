@@ -23,28 +23,25 @@ final class LPFakeLivePhotosService: LPLivePhotosService {
                 let resourcePath = Bundle.main.resourcePath!
                 
                 livePhotosResources.forEach { res in
-//                    let imgName = res.imageUrl + ".jpg"
-//                    let pathToImage = resourcePath + "/" + imgName
-//
-//                    let videoName = res.videoUrl + ".mov"
-//                    let pathToVideo = resourcePath + "/" + videoName
-//
-                    let imageURL = URL(string: "/Users/tqos/Library/Developer/CoreSimulator/Devices/3CE1B1F4-A427-49EA-8236-F084170F2F36/data/Containers/Bundle/Application/1F09FB0A-4D87-4C74-B6DF-885EEC7BDA56/LivePhotos.app/709e38db7637c2bd20f35073a96a45cc.jpg")!
-                    let videoURL = URL(string: "/Users/tqos/Library/Developer/CoreSimulator/Devices/3CE1B1F4-A427-49EA-8236-F084170F2F36/data/Containers/Bundle/Application/1F09FB0A-4D87-4C74-B6DF-885EEC7BDA56/LivePhotos.app/0e21e80d8b50a37f93caa380fe6d0a70.mov")!
-                    
+                    let imageURL = Bundle.main.url(forResource: res.imageUrl, withExtension: "jpg")!
+                    let videoURL = Bundle.main.url(forResource: res.videoUrl, withExtension: "mov")!
                     
                     photosGroup.enter()
                     
                     LivePhoto.generate(
                         from: imageURL,
                         videoURL: videoURL,
-                        progress: { percent in
-                            log.debug(percent)
+                        progress: { [res] percent in
+                            log.debug("generating file \(res.imageUrl) - \(res.videoUrl)", "\(percent)%")
                         },
-                        completion: { livePhoto, _ in
+                        completion: { livePhoto, resources in
                             defer { photosGroup.leave() }
                             guard let livePhoto = livePhoto else { return }
+                            guard let resources = resources else { return }
                             livePhotos.append(livePhoto)
+                            LivePhoto.saveToLibrary(resources, completion: { s in
+                                log.info("isSaved - \(s)")
+                            })
                         }
                     )
                 }
