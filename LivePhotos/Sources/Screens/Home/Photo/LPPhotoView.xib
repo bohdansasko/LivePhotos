@@ -17,6 +17,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wvA-zz-y8r" secondAttribute="height" multiplier="207:190" id="rpM-iA-dSh"/>
+                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="ah8-Cu-7fS" appends="YES" id="eYe-jC-LAR"/>
                     </connections>

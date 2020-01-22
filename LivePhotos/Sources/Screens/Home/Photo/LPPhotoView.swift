@@ -30,12 +30,11 @@ final class LPPhotoView: LPBaseView {
 private extension LPPhotoView {
     
     @IBAction func actDoubleTap(_ sender: Any) {
-//        livePhotoView.delegate = self
-        isAnimation.toggle() 
+        isAnimation.toggle()
         if isAnimation {
-//            livePhotoView.startPlayback(with: .hint)
+            livePhotoView.startPlayback(with: .full)
         } else {
-//            livePhotoView.stopPlayback()
+            livePhotoView.stopPlayback()
         }
     }
     

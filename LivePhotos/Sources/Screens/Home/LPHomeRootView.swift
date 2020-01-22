@@ -51,8 +51,8 @@ private extension LPHomeRootView {
             $0.top.bottom.equalToSuperview()
         }
         pagingScrollView.backgroundColor = backgroundColor
-//        pagingScrollView.showsVerticalScrollIndicator = false
-//        pagingScrollView.showsHorizontalScrollIndicator = false
+        pagingScrollView.showsVerticalScrollIndicator = false
+        pagingScrollView.showsHorizontalScrollIndicator = false
         pagingScrollView.isPagingEnabled = true
         pagingScrollView.maximumZoomScale = 1.0
         pagingScrollView.minimumZoomScale = 1.0
@@ -107,14 +107,13 @@ private extension LPHomeRootView {
 private extension LPHomeRootView {
     
     func configure(_ page: LPPhotoView, with photo: PHLivePhoto, for index: Int) {
+        page.livePhoto = photo
         let frame = frameForPage(at: index)
         page.snp.makeConstraints {
             $0.left.equalToSuperview().offset(frame.origin.x)
             $0.width.equalTo(frame.width)
-            $0.height.equalTo(frame.height)
-            $0.top.bottom.equalTo(pagingScrollView.frameLayoutGuide)
+            $0.top.equalTo(pagingScrollView.frameLayoutGuide).offset(frame.height/2 - page.bounds.height/2)
         }
-        page.livePhoto = photo
     }
     
     func frameForPage(at index: Int) -> CGRect {
