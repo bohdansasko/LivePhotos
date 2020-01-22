@@ -77,7 +77,7 @@ extension LPHomeRootView {
         images.enumerated().forEach { (offset, photo) in
             let page = LPPhotoView.loadViewFromNib()
             pagingScrollView.addSubview(page)
-            configure(page, with: photo, for: offset)
+            configure(page, for: photo, with: offset)
         }
     }
     
@@ -106,7 +106,7 @@ private extension LPHomeRootView {
 
 private extension LPHomeRootView {
     
-    func configure(_ page: LPPhotoView, with photo: PHLivePhoto, for index: Int) {
+    func configure(_ page: LPPhotoView, for photo: PHLivePhoto, with index: Int) {
         page.livePhoto = photo
         let frame = frameForPage(at: index)
         page.snp.makeConstraints {
