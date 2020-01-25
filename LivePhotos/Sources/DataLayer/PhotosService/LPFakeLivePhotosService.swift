@@ -44,27 +44,26 @@ private extension LPFakeLivePhotosService {
         })
     }
     
-}
-
-// MARK: - LPLivePhotosService
-
-extension LPFakeLivePhotosService: LPLivePhotosService {
-    
     func fetchLivePhotoAssets() -> [LPLiveAsset] {
         do {
             let plistURL = Bundle.main.url(
                 forResource: LPConstants.kAssetsListFilename,
                 withExtension: LPConstants.kAssetsListExt
             )!
-            let plistDecoder = PropertyListDecoder()
             let data = try Data(contentsOf: plistURL)
-            let value = try plistDecoder.decode([LPLiveAsset].self, from: data)
+            let value = try PropertyListDecoder().decode([LPLiveAsset].self, from: data)
             return value
         } catch (let err) {
             log.error(err)
         }
         return []
     }
+    
+}
+
+// MARK: - LPLivePhotosService
+
+extension LPFakeLivePhotosService: LPLivePhotosService {
     
     func fetchPhotos() -> Promise<[PHLivePhoto]> {
         return Promise { seal in
