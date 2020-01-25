@@ -54,8 +54,6 @@ private extension LPHomeRootView {
         pagingScrollView.showsVerticalScrollIndicator = false
         pagingScrollView.showsHorizontalScrollIndicator = false
         pagingScrollView.isPagingEnabled = true
-        pagingScrollView.maximumZoomScale = 1.0
-        pagingScrollView.minimumZoomScale = 1.0
         pagingScrollView.bouncesZoom = false
         pagingScrollView.contentSize = contentSizeForPagingScrollView()
     }
@@ -111,8 +109,8 @@ private extension LPHomeRootView {
         let frame = frameForPage(at: index)
         page.snp.makeConstraints {
             $0.left.equalToSuperview().offset(frame.origin.x)
-            $0.width.equalTo(frame.width)
-            $0.top.equalTo(pagingScrollView.frameLayoutGuide).offset(frame.height/2 - page.bounds.height/2)
+            $0.top.equalTo(frame.origin.y)
+            $0.width.height.equalTo(self)
         }
     }
     

@@ -7,3 +7,4 @@
 */
 
 "LOADING_PHOTOS" = "Loading Photos";
+"UNKNOWN_SAVING_ERROR" = "Uknown error. Please, check available memory and restart app.";

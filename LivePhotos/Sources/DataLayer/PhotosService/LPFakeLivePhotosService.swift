@@ -13,6 +13,29 @@ final class LPFakeLivePhotosService {
     private let customQueue = DispatchQueue(label: "com.lp.fake.livephotos.serial.queue")
 }
 
+// MARK: - Help methods
+
+extension LPFakeLivePhotosService {
+    
+    private func generateLivePhoto(with res: LPLivePhoto, completion: @escaping (PHLivePhoto) -> ()) {
+        let imageURL = Bundle.main.url(forResource: res.imageUrl, withExtension: "jpg")!
+        let videoURL = Bundle.main.url(forResource: res.videoUrl, withExtension: "mov")!
+
+        LivePhoto.generate(
+            from: imageURL,
+            videoURL: videoURL,
+            progress: { [res] percent in
+                log.debug("generating file \(res.imageUrl) - \(res.videoUrl)", "\(percent)%")
+            },
+            completion: { livePhoto, _ in
+                guard let livePhoto = livePhoto else { return }
+                completion(livePhoto)
+            }
+        )
+    }
+    
+}
+
 // MARK: - LPLivePhotosService
 
 extension LPFakeLivePhotosService: LPLivePhotosService {
@@ -41,28 +64,6 @@ extension LPFakeLivePhotosService: LPLivePhotosService {
                 }
             }
         }
-    }
-    
-    private func generateLivePhoto(with res: LPLivePhoto, completion: @escaping (PHLivePhoto) -> ()) {
-        let imageURL = Bundle.main.url(forResource: res.imageUrl, withExtension: "jpg")!
-        let videoURL = Bundle.main.url(forResource: res.videoUrl, withExtension: "mov")!
-
-        LivePhoto.generate(
-            from: imageURL,
-            videoURL: videoURL,
-            progress: { [res] percent in
-                log.debug("generating file \(res.imageUrl) - \(res.videoUrl)", "\(percent)%")
-            },
-            completion: { livePhoto, resources in
-                guard let livePhoto = livePhoto else { return }
-                guard let resources = resources else { return }
-                
-                LivePhoto.saveToLibrary(resources, completion: { s in
-                    log.info("isSaved - \(s)")
-                    completion(livePhoto)
-                })
-            }
-        )
     }
     
 }
