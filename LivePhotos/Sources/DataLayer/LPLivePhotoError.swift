@@ -14,7 +14,7 @@ enum LPLivePhotoError: Error {
 
 extension LPLivePhotoError {
     
-    var errorDescription: String {
+    var localizedDescription: String {
         switch self {
         case .unknownSavingError:
             return "UNKNOWN_SAVING_ERROR".localized

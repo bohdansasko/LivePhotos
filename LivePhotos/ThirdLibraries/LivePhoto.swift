@@ -88,7 +88,7 @@ final class LivePhoto {
         }
         let assetIdentifier = UUID().uuidString
         let _keyPhotoURL = imageURL ?? generateKeyPhoto(from: videoURL)
-        guard let keyPhotoURL = _keyPhotoURL, let pairedImageURL = addAssetID(assetIdentifier, toImage: keyPhotoURL, saveTo: cacheDirectory.appendingPathComponent(assetIdentifier).appendingPathExtension("jpg")) else {
+        guard let keyPhotoURL = _keyPhotoURL, let pairedImageURL = addAssetID(assetIdentifier, toImage: keyPhotoURL, saveTo: cacheDirectory.appendingPathComponent(assetIdentifier).appendingPathExtension("JPG")) else {
             DispatchQueue.main.async {
                 completion(nil, nil)
             }
@@ -110,6 +110,25 @@ final class LivePhoto {
                 }
             }
         }
+    }
+    
+    public class func requestLivePhoto(imageURL pairedImageURL: URL, videoURL pairedVideoURL: URL, completion: @escaping (PHLivePhoto?, Error?) -> Void) {
+        _ = PHLivePhoto.request(
+            withResourceFileURLs: [pairedImageURL, pairedVideoURL],
+            placeholderImage: nil,
+            targetSize: .zero,
+            contentMode: .aspectFit,
+            resultHandler: { (livePhoto: PHLivePhoto?, info: [AnyHashable : Any]) -> Void in
+                if let isDegraded = info[PHLivePhotoInfoIsDegradedKey] as? Bool, isDegraded {
+                    return
+                }
+                let error = info[PHLivePhotoInfoErrorKey] as? Error
+                
+                DispatchQueue.main.async {
+                    completion(livePhoto, error)
+                }
+            }
+        )
     }
     
     private func extractResources(from livePhoto: PHLivePhoto, to directoryURL: URL, completion: @escaping (LivePhotoResources?) -> Void) {

@@ -8,10 +8,6 @@
 
 import PhotosUI
 
-final class LPLivePhotoView: PHLivePhotoView {
-    
-}
-
 final class LPPhotoView: LPBaseView {
     @IBOutlet fileprivate weak var livePhotoView: LPLivePhotoView!
     

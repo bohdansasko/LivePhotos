@@ -15,8 +15,8 @@
 		2084E52423CD22420018358E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2084E52323CD22420018358E /* Localizable.strings */; };
 		2084E52623CD31A20018358E /* LPPhotosScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52523CD31A20018358E /* LPPhotosScrollView.swift */; };
 		2084E52823CD35E60018358E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E52723CD35E60018358E /* UIView+Ext.swift */; };
-		209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg */; };
-		209BD17623D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.jpg */; };
+		209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.JPG */; };
+		209BD17623D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG */; };
 		20DEF55423CF9C8B00560EF0 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */; };
 		20DEF55C23CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov in Resources */ = {isa = PBXBuildFile; fileRef = 20DEF55823CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov */; };
 		20DEF55D23CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov in Resources */ = {isa = PBXBuildFile; fileRef = 20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */; };
@@ -29,13 +29,15 @@
 		97A4691923DC7C5700B26733 /* LPLivePhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4691823DC7C5700B26733 /* LPLivePhotoError.swift */; };
 		97A4691B23DC7DC900B26733 /* LPPhotosStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4691A23DC7DC900B26733 /* LPPhotosStorage.swift */; };
 		97A4691E23DC7DF800B26733 /* LPLocalPhotosStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4691D23DC7DF800B26733 /* LPLocalPhotosStorage.swift */; };
+		97A4692223DC846F00B26733 /* PhotosList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97A4692123DC846F00B26733 /* PhotosList.plist */; };
+		97A4692523DC939A00B26733 /* LPLivePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4692423DC939A00B26733 /* LPLivePhotoView.swift */; };
 		97C4474823CB663D009F22B5 /* LPRootableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474723CB663D009F22B5 /* LPRootableViewController.swift */; };
 		97C4474B23CB66B2009F22B5 /* LPHomeRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474A23CB66B2009F22B5 /* LPHomeRootView.swift */; };
 		97C4474F23CB66E7009F22B5 /* LPBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4474E23CB66E7009F22B5 /* LPBaseView.swift */; };
 		97C4475223CB7D70009F22B5 /* LPPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475123CB7D70009F22B5 /* LPPhotoView.swift */; };
 		97C4475423CB7D7A009F22B5 /* LPPhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C4475323CB7D7A009F22B5 /* LPPhotoView.xib */; };
 		97C4475823CB84F1009F22B5 /* LPPhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475723CB84F1009F22B5 /* LPPhotosService.swift */; };
-		97C4475A23CB870E009F22B5 /* LPLivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475923CB870E009F22B5 /* LPLivePhoto.swift */; };
+		97C4475A23CB870E009F22B5 /* LPLiveAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475923CB870E009F22B5 /* LPLiveAsset.swift */; };
 		97C4475F23CB8743009F22B5 /* LPFakeLivePhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4475E23CB8743009F22B5 /* LPFakeLivePhotosService.swift */; };
 		97C4476123CB8A05009F22B5 /* LPBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4476023CB8A05009F22B5 /* LPBaseNavigationController.swift */; };
 		97C4476523CB8DD1009F22B5 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C4476423CB8DD1009F22B5 /* UIViewController+Ext.swift */; };
@@ -51,8 +53,8 @@
 		2084E52323CD22420018358E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2084E52523CD31A20018358E /* LPPhotosScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotosScrollView.swift; sourceTree = "<group>"; };
 		2084E52723CD35E60018358E /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 709e38db7637c2bd20f35073a96a45cc.jpg; sourceTree = "<group>"; };
-		209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12e56c1d1137fb114e360b7a9970f3f9.jpg; sourceTree = "<group>"; };
+		209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 709e38db7637c2bd20f35073a96a45cc.JPG; sourceTree = "<group>"; };
+		209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12e56c1d1137fb114e360b7a9970f3f9.JPG; sourceTree = "<group>"; };
 		20DEF55323CF9C8B00560EF0 /* LivePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
 		20DEF55823CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 709e38db7637c2bd20f35073a96a45cc.mov; sourceTree = "<group>"; };
 		20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 12e56c1d1137fb114e360b7a9970f3f9.mov; sourceTree = "<group>"; };
@@ -67,13 +69,15 @@
 		97A4691823DC7C5700B26733 /* LPLivePhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPLivePhotoError.swift; sourceTree = "<group>"; };
 		97A4691A23DC7DC900B26733 /* LPPhotosStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotosStorage.swift; sourceTree = "<group>"; };
 		97A4691D23DC7DF800B26733 /* LPLocalPhotosStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPLocalPhotosStorage.swift; sourceTree = "<group>"; };
+		97A4692123DC846F00B26733 /* PhotosList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PhotosList.plist; sourceTree = "<group>"; };
+		97A4692423DC939A00B26733 /* LPLivePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPLivePhotoView.swift; sourceTree = "<group>"; };
 		97C4474723CB663D009F22B5 /* LPRootableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPRootableViewController.swift; sourceTree = "<group>"; };
 		97C4474A23CB66B2009F22B5 /* LPHomeRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeRootView.swift; sourceTree = "<group>"; };
 		97C4474E23CB66E7009F22B5 /* LPBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPBaseView.swift; sourceTree = "<group>"; };
 		97C4475123CB7D70009F22B5 /* LPPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotoView.swift; sourceTree = "<group>"; };
 		97C4475323CB7D7A009F22B5 /* LPPhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LPPhotoView.xib; sourceTree = "<group>"; };
 		97C4475723CB84F1009F22B5 /* LPPhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPPhotosService.swift; sourceTree = "<group>"; };
-		97C4475923CB870E009F22B5 /* LPLivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPLivePhoto.swift; sourceTree = "<group>"; };
+		97C4475923CB870E009F22B5 /* LPLiveAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPLiveAsset.swift; sourceTree = "<group>"; };
 		97C4475E23CB8743009F22B5 /* LPFakeLivePhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPFakeLivePhotosService.swift; sourceTree = "<group>"; };
 		97C4476023CB8A05009F22B5 /* LPBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPBaseNavigationController.swift; sourceTree = "<group>"; };
 		97C4476423CB8DD1009F22B5 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
@@ -111,18 +115,6 @@
 			path = ThirdLibraries;
 			sourceTree = "<group>";
 		};
-		20DEF55523CFA3AB00560EF0 /* LS */ = {
-			isa = PBXGroup;
-			children = (
-				209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg */,
-				209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.jpg */,
-				20DEF55823CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov */,
-				20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */,
-			);
-			name = LS;
-			path = Resources/LS;
-			sourceTree = "<group>";
-		};
 		97348FF023CB5391006D8F16 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				20DEF55223CF9C3C00560EF0 /* ThirdLibraries */,
-				20DEF55523CFA3AB00560EF0 /* LS */,
 				9734901423CB57DF006D8F16 /* Sources */,
 				9734901323CB57D0006D8F16 /* Resources */,
 			);
@@ -165,9 +156,11 @@
 		9734901323CB57D0006D8F16 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				97A4692323DC905000B26733 /* LS */,
 				9734900523CB5393006D8F16 /* Assets.xcassets */,
 				9734900A23CB5393006D8F16 /* Info.plist */,
 				2084E52323CD22420018358E /* Localizable.strings */,
+				97A4692123DC846F00B26733 /* PhotosList.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -187,6 +180,7 @@
 		9734901D23CB63B7006D8F16 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				97A4692423DC939A00B26733 /* LPLivePhotoView.swift */,
 				2084E52523CD31A20018358E /* LPPhotosScrollView.swift */,
 				97C4475023CB7D54009F22B5 /* Photo */,
 				97C4474A23CB66B2009F22B5 /* LPHomeRootView.swift */,
@@ -203,6 +197,17 @@
 				97A4691D23DC7DF800B26733 /* LPLocalPhotosStorage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		97A4692323DC905000B26733 /* LS */ = {
+			isa = PBXGroup;
+			children = (
+				209BD17323D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.JPG */,
+				209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG */,
+				20DEF55823CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov */,
+				20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */,
+			);
+			path = LS;
 			sourceTree = "<group>";
 		};
 		97C4474923CB6642009F22B5 /* Base */ = {
@@ -230,7 +235,7 @@
 		97C4475623CB8497009F22B5 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
-				97C4475923CB870E009F22B5 /* LPLivePhoto.swift */,
+				97C4475923CB870E009F22B5 /* LPLiveAsset.swift */,
 				97A4691823DC7C5700B26733 /* LPLivePhotoError.swift */,
 				97A4691C23DC7DCF00B26733 /* Storage */,
 				97C4475B23CB8726009F22B5 /* PhotosService */,
@@ -344,12 +349,13 @@
 			files = (
 				2084E52423CD22420018358E /* Localizable.strings in Resources */,
 				9734901F23CB6403006D8F16 /* LPHomeViewController.xib in Resources */,
-				209BD17623D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.jpg in Resources */,
+				209BD17623D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG in Resources */,
 				20DEF55D23CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov in Resources */,
 				9734900923CB5393006D8F16 /* LaunchScreen.storyboard in Resources */,
 				9734900623CB5393006D8F16 /* Assets.xcassets in Resources */,
-				209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.jpg in Resources */,
+				209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.JPG in Resources */,
 				97C4475423CB7D7A009F22B5 /* LPPhotoView.xib in Resources */,
+				97A4692223DC846F00B26733 /* PhotosList.plist in Resources */,
 				20DEF55C23CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,11 +410,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C4476523CB8DD1009F22B5 /* UIViewController+Ext.swift in Sources */,
+				97A4692523DC939A00B26733 /* LPLivePhotoView.swift in Sources */,
 				97C4475823CB84F1009F22B5 /* LPPhotosService.swift in Sources */,
 				2084E52623CD31A20018358E /* LPPhotosScrollView.swift in Sources */,
 				97C4475223CB7D70009F22B5 /* LPPhotoView.swift in Sources */,
 				2084E52023CD207D0018358E /* Date+Ext.swift in Sources */,
-				97C4475A23CB870E009F22B5 /* LPLivePhoto.swift in Sources */,
+				97C4475A23CB870E009F22B5 /* LPLiveAsset.swift in Sources */,
 				97A4691923DC7C5700B26733 /* LPLivePhotoError.swift in Sources */,
 				97A4691E23DC7DF800B26733 /* LPLocalPhotosStorage.swift in Sources */,
 				9734901123CB5672006D8F16 /* LPBaseViewController.swift in Sources */,

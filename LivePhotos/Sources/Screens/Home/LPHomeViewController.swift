@@ -14,7 +14,7 @@ final class LPHomeViewController: LPBaseViewController, LPRootableViewController
     
     private let _photosService: LPLivePhotosService
 
-    private var images: [LPLivePhoto] = []
+    private var images: [LPLiveAsset] = []
     private var imageIndex = 0
     
     // MARK: - Lifecycle

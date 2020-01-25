@@ -15,23 +15,33 @@ final class LPFakeLivePhotosService {
 
 // MARK: - Help methods
 
-extension LPFakeLivePhotosService {
+private extension LPFakeLivePhotosService {
     
-    private func generateLivePhoto(with res: LPLivePhoto, completion: @escaping (PHLivePhoto) -> ()) {
-        let imageURL = Bundle.main.url(forResource: res.imageUrl, withExtension: "jpg")!
-        let videoURL = Bundle.main.url(forResource: res.videoUrl, withExtension: "mov")!
+    func generateLivePhoto(with res: LPLiveAsset, completion: @escaping (PHLivePhoto) -> Void) {
+        let imageURL = Bundle.main.url(forResource: res.name, withExtension: "JPG")!
+        let videoURL = Bundle.main.url(forResource: res.name, withExtension: "mov")!
 
         LivePhoto.generate(
             from: imageURL,
             videoURL: videoURL,
             progress: { [res] percent in
-                log.debug("generating file \(res.imageUrl) - \(res.videoUrl)", "\(percent)%")
+                log.debug("generating file \(res.name)", "\(percent)%")
             },
             completion: { livePhoto, _ in
                 guard let livePhoto = livePhoto else { return }
                 completion(livePhoto)
             }
         )
+    }
+    
+    
+    func requestPhoto(with res: LPLiveAsset, completion: @escaping (PHLivePhoto?, Error?) -> Void) {
+        let imageURL = Bundle.main.url(forResource: res.name, withExtension: "JPG")!
+        let videoURL = Bundle.main.url(forResource: res.name, withExtension: "mov")!
+
+        LivePhoto.requestLivePhoto(imageURL: imageURL, videoURL: videoURL, completion: { livePhoto, error in
+            completion(livePhoto, error)
+        })
     }
     
 }
@@ -45,24 +55,41 @@ extension LPFakeLivePhotosService: LPLivePhotosService {
             var livePhotos = [PHLivePhoto]()
 
             let dg = DispatchGroup()
-            let livePhotosResources = LPLivePhoto.mockPhotos()
+            let livePhotosResources = LPLiveAsset.mockPhotos()
 
+            var lvError: Error?
+            
             customQueue.async {
                 livePhotosResources.forEach { res in
                     dg.enter()
-                    self.generateLivePhoto(with: res, completion: { (livePhoto) in
-                        livePhotos.append(livePhoto)
-                        dg.leave()
+                    
+                    self.requestPhoto(with: res, completion: { (livePhoto, error) in
+                        defer { dg.leave() }
+                        
+                        if let err = error {
+                            log.error(err)
+                            lvError = err
+                        }
+                        
+                        if let lv = livePhoto {
+                            livePhotos.append(lv)
+                        }
                     })
+                    
                     dg.wait()
                 }
             }
             
             customQueue.async {
                 dg.notify(queue: .main) {
-                    seal.fulfill(livePhotos)
+                    if let err = lvError {
+                        seal.reject(err)
+                    } else {
+                        seal.fulfill(livePhotos)
+                    }
                 }
             }
+            
         }
     }
     
