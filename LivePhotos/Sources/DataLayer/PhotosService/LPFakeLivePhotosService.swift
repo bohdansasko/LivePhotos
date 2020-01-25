@@ -50,17 +50,33 @@ private extension LPFakeLivePhotosService {
 
 extension LPFakeLivePhotosService: LPLivePhotosService {
     
+    func fetchLivePhotoAssets() -> [LPLiveAsset] {
+        do {
+            let plistURL = Bundle.main.url(
+                forResource: LPConstants.kAssetsListFilename,
+                withExtension: LPConstants.kAssetsListExt
+            )!
+            let plistDecoder = PropertyListDecoder()
+            let data = try Data(contentsOf: plistURL)
+            let value = try plistDecoder.decode([LPLiveAsset].self, from: data)
+            return value
+        } catch (let err) {
+            log.error(err)
+        }
+        return []
+    }
+    
     func fetchPhotos() -> Promise<[PHLivePhoto]> {
         return Promise { seal in
             var livePhotos = [PHLivePhoto]()
-
+            
+            let assets = fetchLivePhotoAssets()
             let dg = DispatchGroup()
-            let livePhotosResources = LPLiveAsset.mockPhotos()
-
+            
             var lvError: Error?
             
             customQueue.async {
-                livePhotosResources.forEach { res in
+                assets.forEach { res in
                     dg.enter()
                     
                     self.requestPhoto(with: res, completion: { (livePhoto, error) in
