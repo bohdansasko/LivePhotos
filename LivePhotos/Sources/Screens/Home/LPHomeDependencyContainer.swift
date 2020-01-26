@@ -20,8 +20,9 @@ extension LPHomeDependencyContainer {
         let api = LPLocalLivePhotosService()
         let storage = LPLocalPhotosStorage()
         let repository = LPLocalPhotosRepository(photosAPI: api, storage: storage)
-
-        let homeViewController = LPHomeViewController(photosRepository: repository)
+        let viewModel = LPHomeViewModel(photosRepository: repository)
+        
+        let homeViewController = LPHomeViewController(viewModel: viewModel)
         let navigationController = LPBaseNavigationController(rootViewController: homeViewController)
         return navigationController
     }
