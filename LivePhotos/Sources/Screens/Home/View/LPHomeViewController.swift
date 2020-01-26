@@ -14,6 +14,7 @@ final class LPHomeViewController: LPBaseViewController, LPRootableViewController
     typealias RootView = LPHomeRootView
     
     // MARK: - Properties
+    
     private let _viewModel: LPHomeViewModelAble
     private let _disposeBag = DisposeBag()
     
@@ -39,13 +40,19 @@ private extension LPHomeViewController {
     
     func setupUI() {
         rootView.set(viewModel: _viewModel)
-        setupErrorSubscription()
+        setupSubscriptionsToViewModel()
     }
     
-    func setupErrorSubscription() {
+    func setupSubscriptionsToViewModel() {
         _viewModel.errorMessage
             .subscribe(onNext: { [weak self] errorMessage in
                 self?.handleError(errorMessage)
+            })
+            .disposed(by: _disposeBag)
+        
+        _viewModel.savedPhotoStatusMessage
+            .subscribe(onNext: { [weak self] msg in
+                self?.showAlert(title: "HOME_SCREEN_TITLE".localized, message: msg, comment: nil)
             })
             .disposed(by: _disposeBag)
     }

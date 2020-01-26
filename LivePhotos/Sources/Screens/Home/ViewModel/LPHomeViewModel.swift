@@ -17,6 +17,8 @@ final class LPHomeViewModel: LPHomeViewModelAble {
 
     private let _items = BehaviorRelay<[PHLivePhoto]>(value: [])
     private let _isActivityIndicatorAnimation = BehaviorRelay(value: false)
+    private let _isSaveButtonEnabled = BehaviorRelay(value: true)
+    private let _savedStatusMessage = PublishSubject<String>()
     private let _errorMessage = PublishSubject<LPErrorMessage>()
     
     // MARK: - Lifecycle
@@ -54,8 +56,17 @@ extension LPHomeViewModel {
         return _isActivityIndicatorAnimation.asObservable()
     }
     
+    var isSaveButtonEnabled: Observable<Bool> {
+        return _isSaveButtonEnabled.asObservable()
+    }
+    
+    
     var items: Observable<[PHLivePhoto]> {
         return _items.asObservable()
+    }
+    
+    var savedPhotoStatusMessage: Observable<String> {
+        return _savedStatusMessage.asObservable()
     }
     
     var errorMessage: Observable<LPErrorMessage> {
@@ -95,13 +106,17 @@ extension LPHomeViewModel {
     
     func saveLivePhoto(_ livePhoto: PHLivePhoto) {
         _isActivityIndicatorAnimation.accept(true)
+        _isSaveButtonEnabled.accept(false)
+        
         _photosRepository.savePhoto(livePhoto)
-            .done { success in
+            .done { [weak self] success in
+                let localizedStatusKey: String
                 if success {
-                    log.info("Saved succesfully. Please, check your photos gallery.")
+                    localizedStatusKey = "SUCCESFULLY_SAVED_PHOTO_TO_GALLERY"
                 } else {
-                    log.info("Coudn't save the live photo. Please, try again later.")
+                    localizedStatusKey = "ERROR_SAVED_PHOTO_TO_GALLERY"
                 }
+                self?._savedStatusMessage.onNext(localizedStatusKey.localized)
             }
             .catch { [weak self] err in
                 guard let self = self else { return }
@@ -113,10 +128,12 @@ extension LPHomeViewModel {
                     message = err.localizedDescription
                 }
                 
-                let errMsg = LPErrorMessage(title: "LOADING_PHOTOS".localized, message: message)
+                let errMsg = LPErrorMessage(title: "HOME_SCREEN_TITLE".localized, message: message)
                 self._errorMessage.onNext(errMsg)
             }.finally { [weak self] in
-                self?._isActivityIndicatorAnimation.accept(false)
+                guard let self = self else { return }
+                self._isActivityIndicatorAnimation.accept(false)
+                self._isSaveButtonEnabled.accept(true)
             }
     }
     

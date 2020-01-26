@@ -7,9 +7,13 @@
 */
 
 "LOADING_PHOTOS" = "Loading Photos";
+"HOME_SCREEN_TITLE" = "Live Photos";
 
 // MARK: - ERRORS
 
 "UNKNOWN_SAVING_ERROR"      = "Uknown error. Please, check available memory and restart app.";
 "MISSING_IMAGE_ASSET_ERROR" = "Missing an image for live photo. Please, contact with developer to resolve the issue.";
 "MISSING_VIDEO_ASSET_ERROR" = "Missing an video for live photo. Please, contact with developer to resolve the issue.";
+
+"SUCCESFULLY_SAVED_PHOTO_TO_GALLERY" = "Saved succesfully. Please, check your photos gallery.";
+"ERROR_SAVED_PHOTO_TO_GALLERY"       = "Coudn't save the live photo. Please, try again later.";

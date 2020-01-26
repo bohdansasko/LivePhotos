@@ -69,6 +69,10 @@ private extension LPHomeRootView {
             .bind(to: activityIndicator.rx.isAnimating)
             .disposed(by: _disposeBag)
         
+        _viewModel.isSaveButtonEnabled
+            .bind(to: managePhotoView.saveButton.rx.isEnabled)
+            .disposed(by: _disposeBag)
+        
         _viewModel.items
             .subscribe(onNext: { [weak self] _ in
                 self?.photosCollectionView.reloadData()
@@ -102,7 +106,6 @@ extension LPHomeRootView: LPManagePhotoViewDelegate {
             assertionFailure("fix me")
             return
         }
-        
         _viewModel.saveLivePhoto(livePhoto)
     }
     

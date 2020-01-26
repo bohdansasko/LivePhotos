@@ -13,7 +13,7 @@ protocol LPManagePhotoViewDelegate: class {
 }
 
 final class LPManagePhotoView: UIView {
-    @IBOutlet fileprivate weak var saveButton: UIButton!
+    @IBOutlet fileprivate(set) weak var saveButton: UIButton!
     
     var delegate: LPManagePhotoViewDelegate?
     
