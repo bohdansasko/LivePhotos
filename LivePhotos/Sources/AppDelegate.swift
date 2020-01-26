@@ -27,11 +27,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
     
     func setupWindow() {
-        let homeViewController = LPHomeViewController(photosService: LPFakeLivePhotosService())
-        let rootNavigation = LPBaseNavigationController(rootViewController: homeViewController)
+        let dependencyContainer = LPHomeDependencyContainer()
+        let homeNavigationController = dependencyContainer.makeHomeNavigationController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = rootNavigation
+        window!.rootViewController = homeNavigationController
         window!.makeKeyAndVisible()
     }
     

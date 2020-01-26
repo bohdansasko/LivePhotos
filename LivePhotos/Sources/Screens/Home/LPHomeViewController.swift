@@ -12,15 +12,15 @@ import PromiseKit
 final class LPHomeViewController: LPBaseViewController, LPRootableViewController {
     typealias RootView = LPHomeRootView
     
-    private let _photosService: LPLivePhotosService
+    private let _photosRepository: LPPhotosRepository
 
     private var images: [LPLiveAsset] = []
     private var imageIndex = 0
     
     // MARK: - Lifecycle
 
-    init(photosService: LPLivePhotosService) {
-        _photosService = photosService
+    init(photosRepository: LPPhotosRepository) {
+        _photosRepository = photosRepository
         
         super.init(LPHomeViewController.self)
     }
@@ -68,7 +68,8 @@ private extension LPHomeViewController {
     
     func fetchPhotos() {
         rootView.activityIndicator.startAnimating()
-        _photosService.fetchPhotos()
+        
+        _photosRepository.fetchLivePhotos()
             .done { [weak self] photos in
                 guard let self = self else { return }
 //                self.images = photos
@@ -76,7 +77,15 @@ private extension LPHomeViewController {
             }
             .catch { [weak self] err in
                 guard let self = self else { return }
-                let errMsg = LPErrorMessage(title: "LOADING_PHOTOS".localized, message: err.localizedDescription)
+                
+                let message: String?
+                if let e = err as? LPLivePhotoError {
+                    message = e.localizedDescription
+                } else {
+                    message = err.localizedDescription
+                }
+                
+                let errMsg = LPErrorMessage(title: "LOADING_PHOTOS".localized, message: message)
                 self.handleError(errMsg)
             }.finally { [weak self] in
                 self?.rootView.activityIndicator.stopAnimating()

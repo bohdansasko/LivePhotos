@@ -9,7 +9,13 @@
 import PromiseKit
 import Photos
 
-final class LPLocalPhotosStorage: LPPhotosStorage {
+final class LPLocalPhotosStorage {
+    // do nothing
+}
+
+// MARK: - LPPhotosStorage
+
+extension LPLocalPhotosStorage: LPPhotosStorage {
     
     func savePhoto(_ livePhoto: PHLivePhoto) -> Promise<Bool> {
         return Promise { seal in
@@ -24,6 +30,21 @@ final class LPLocalPhotosStorage: LPPhotosStorage {
                 })
             })
         }
+    }
+    
+    func fetchLivePhotoAssets() -> [LPLiveAsset] {
+        do {
+            let plistURL = Bundle.main.url(
+                forResource: LPConstants.kAssetsListFilename,
+                withExtension: LPConstants.kAssetsListExt
+            )!
+            let data = try Data(contentsOf: plistURL)
+            let value = try PropertyListDecoder().decode([LPLiveAsset].self, from: data)
+            return value
+        } catch (let err) {
+            log.error(err)
+        }
+        return []
     }
     
 }

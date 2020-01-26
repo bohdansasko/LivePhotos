@@ -10,6 +10,8 @@ import Foundation
 
 enum LPLivePhotoError: Error {
     case unknownSavingError
+    case missingImageAsset
+    case missingVideoAsset
 }
 
 extension LPLivePhotoError {
@@ -18,7 +20,12 @@ extension LPLivePhotoError {
         switch self {
         case .unknownSavingError:
             return "UNKNOWN_SAVING_ERROR".localized
+        case .missingImageAsset:
+            return "MISSING_IMAGE_ASSET_ERROR".localized
+        case .missingVideoAsset:
+            return "MISSING_VIDEO_ASSET_ERROR".localized
         }
+        
     }
     
 }

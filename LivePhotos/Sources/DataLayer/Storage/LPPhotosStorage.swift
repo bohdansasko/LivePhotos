@@ -10,5 +10,6 @@ import PromiseKit
 import Photos
 
 protocol LPPhotosStorage {
+    func fetchLivePhotoAssets() -> [LPLiveAsset]
     func savePhoto(_ livePhoto: PHLivePhoto) -> Promise<Bool>
 }

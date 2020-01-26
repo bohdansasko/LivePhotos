@@ -10,5 +10,5 @@ import PromiseKit
 import Photos
 
 protocol LPLivePhotosService {
-    func fetchPhotos() -> Promise<[PHLivePhoto]>
+    func fetchPhotos(by assets: [LPLiveAsset]) -> Promise<[PHLivePhoto]>
 }

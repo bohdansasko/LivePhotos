@@ -7,4 +7,9 @@
 */
 
 "LOADING_PHOTOS" = "Loading Photos";
-"UNKNOWN_SAVING_ERROR" = "Uknown error. Please, check available memory and restart app.";
+
+// MARK: - ERRORS
+
+"UNKNOWN_SAVING_ERROR"      = "Uknown error. Please, check available memory and restart app.";
+"MISSING_IMAGE_ASSET_ERROR" = "Missing an image for live photo. Please, contact with developer to resolve the issue.";
+"MISSING_VIDEO_ASSET_ERROR" = "Missing an video for live photo. Please, contact with developer to resolve the issue.";
