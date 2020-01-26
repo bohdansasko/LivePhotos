@@ -18,6 +18,9 @@
 		209BD17623D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG */; };
 		20DEF55C23CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov in Resources */ = {isa = PBXBuildFile; fileRef = 20DEF55823CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov */; };
 		20DEF55D23CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov in Resources */ = {isa = PBXBuildFile; fileRef = 20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */; };
+		97179CF223DDE68500625DA8 /* LPManagePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97179CF123DDE68500625DA8 /* LPManagePhotoView.swift */; };
+		97179CF423DDE68B00625DA8 /* LPManagePhotoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97179CF323DDE68B00625DA8 /* LPManagePhotoView.xib */; };
+		97179CF623DDEC5E00625DA8 /* LPHomeViewModelAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97179CF523DDEC5E00625DA8 /* LPHomeViewModelAble.swift */; };
 		97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97348FFC23CB5391006D8F16 /* AppDelegate.swift */; };
 		9734900623CB5393006D8F16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9734900523CB5393006D8F16 /* Assets.xcassets */; };
 		9734900923CB5393006D8F16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9734900723CB5393006D8F16 /* LaunchScreen.storyboard */; };
@@ -60,6 +63,9 @@
 		209BD17423D0232A009E4E85 /* 12e56c1d1137fb114e360b7a9970f3f9.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12e56c1d1137fb114e360b7a9970f3f9.JPG; sourceTree = "<group>"; };
 		20DEF55823CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 709e38db7637c2bd20f35073a96a45cc.mov; sourceTree = "<group>"; };
 		20DEF55923CFA3AB00560EF0 /* 12e56c1d1137fb114e360b7a9970f3f9.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 12e56c1d1137fb114e360b7a9970f3f9.mov; sourceTree = "<group>"; };
+		97179CF123DDE68500625DA8 /* LPManagePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPManagePhotoView.swift; sourceTree = "<group>"; };
+		97179CF323DDE68B00625DA8 /* LPManagePhotoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LPManagePhotoView.xib; sourceTree = "<group>"; };
+		97179CF523DDEC5E00625DA8 /* LPHomeViewModelAble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeViewModelAble.swift; sourceTree = "<group>"; };
 		97348FF923CB5391006D8F16 /* LivePhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97348FFC23CB5391006D8F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9734900523CB5393006D8F16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +127,15 @@
 				975BE5F423DDDC5F0003AD38 /* LPLivePhotoView.swift */,
 			);
 			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		97179CF023DDE65800625DA8 /* ManagePhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				97179CF123DDE68500625DA8 /* LPManagePhotoView.swift */,
+				97179CF323DDE68B00625DA8 /* LPManagePhotoView.xib */,
+			);
+			path = ManagePhotoView;
 			sourceTree = "<group>";
 		};
 		97348FF023CB5391006D8F16 = {
@@ -201,6 +216,7 @@
 		975BE5F223DDDC5F0003AD38 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				97179CF523DDEC5E00625DA8 /* LPHomeViewModelAble.swift */,
 				975BE5F323DDDC5F0003AD38 /* LPHomeViewModel.swift */,
 			);
 			path = ViewModel;
@@ -209,6 +225,7 @@
 		975BE5F523DDDC5F0003AD38 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				97179CF023DDE65800625DA8 /* ManagePhotoView */,
 				975BE5F623DDDC5F0003AD38 /* PhotoCell */,
 				975BE5FA23DDDC5F0003AD38 /* LPHomeRootView.swift */,
 				975BE5FB23DDDC5F0003AD38 /* LPHomeViewController.swift */,
@@ -393,6 +410,7 @@
 				975BE60023DDDC5F0003AD38 /* LPPhotoViewCell.xib in Resources */,
 				209BD17523D0232A009E4E85 /* 709e38db7637c2bd20f35073a96a45cc.JPG in Resources */,
 				97A4692223DC846F00B26733 /* LSAssetsList.plist in Resources */,
+				97179CF423DDE68B00625DA8 /* LPManagePhotoView.xib in Resources */,
 				20DEF55C23CFA3AB00560EF0 /* 709e38db7637c2bd20f35073a96a45cc.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +481,7 @@
 				97C4475F23CB8743009F22B5 /* LPLocalLivePhotosService.swift in Sources */,
 				97348FFD23CB5391006D8F16 /* AppDelegate.swift in Sources */,
 				2084E52223CD21930018358E /* LPErrorTraits.swift in Sources */,
+				97179CF623DDEC5E00625DA8 /* LPHomeViewModelAble.swift in Sources */,
 				975BE5E423DDC16E0003AD38 /* LPPhotosRepository.swift in Sources */,
 				2084E51723CD1E330018358E /* LPErrorMessage.swift in Sources */,
 				2084E52823CD35E60018358E /* UIView+Ext.swift in Sources */,
@@ -471,6 +490,7 @@
 				97C4474F23CB66E7009F22B5 /* LPBaseView.swift in Sources */,
 				975BE60223DDDC5F0003AD38 /* LPHomeRootView.swift in Sources */,
 				97A4692823DC9A2A00B26733 /* LivePhoto.swift in Sources */,
+				97179CF223DDE68500625DA8 /* LPManagePhotoView.swift in Sources */,
 				97C4474823CB663D009F22B5 /* LPRootableViewController.swift in Sources */,
 				2084E51C23CD1E6E0018358E /* String+Ext.swift in Sources */,
 				97C4476123CB8A05009F22B5 /* LPBaseNavigationController.swift in Sources */,

@@ -11,6 +11,7 @@ import Photos
 
 protocol LPPhotosRepository {
     func fetchLivePhotos() -> Promise<[PHLivePhoto]>
+    func savePhoto(_ livePhoto: PHLivePhoto) -> Promise<Bool>
 }
 
 final class LPLocalPhotosRepository {
@@ -33,6 +34,10 @@ extension LPLocalPhotosRepository: LPPhotosRepository {
         let assets = _storage.fetchLivePhotoAssets()
         let photos = _photosAPI.fetchPhotos(by: assets)
         return photos
+    }
+    
+    func savePhoto(_ livePhoto: PHLivePhoto) -> Promise<Bool> {
+        return _storage.savePhoto(livePhoto)
     }
     
 }

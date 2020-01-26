@@ -13,7 +13,11 @@ import RxCocoa
 
 final class LPHomeRootView: LPBaseView {
     
-    @IBOutlet fileprivate weak var photosCollectionView: UICollectionView!
+    @IBOutlet fileprivate weak var photosCollectionView  : UICollectionView!
+    @IBOutlet fileprivate weak var photoControlsContainer: UIView!
+    
+    fileprivate lazy var managePhotoView: LPManagePhotoView = LPManagePhotoView.loadViewFromNib()
+    
     
     private var _viewModel: LPHomeViewModelAble!
     private let _disposeBag = DisposeBag()
@@ -33,20 +37,24 @@ private extension LPHomeRootView {
     
     func setupLayout() {
         backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1098039216, blue: 0.1176470588, alpha: 1)
+        photoControlsContainer.backgroundColor = .clear
         
         setupPhotosCollection()
+        setupControlsContainer()
         setupActivityIndicator()
     }
 
     func setupPhotosCollection() {
-        addSubview(photosCollectionView)
-        photosCollectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
         photosCollectionView.dataSource = self
         photosCollectionView.delegate = self
         photosCollectionView.backgroundColor = backgroundColor
         photosCollectionView.register(nib: LPPhotoViewCell.self)
+    }
+    
+    func setupControlsContainer() {
+        photoControlsContainer.addSubview(managePhotoView)
+        managePhotoView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        managePhotoView.delegate = self
     }
     
     func setupActivityIndicator() {
@@ -76,8 +84,26 @@ extension LPHomeRootView {
     
     func set(viewModel: LPHomeViewModelAble) {
         _viewModel = viewModel
-        
         setupSubscriptionsToViewModel()
+    }
+    
+}
+
+// MARK: - LPManagePhotoViewDelegate
+
+extension LPHomeRootView: LPManagePhotoViewDelegate {
+    
+    func didActSaveButton(_ manageView: LPManagePhotoView) {
+        guard let cell = photosCollectionView.visibleCells.first as? LPPhotoViewCell else {
+            assertionFailure("required")
+            return
+        }
+        guard let livePhoto = cell.livePhoto else {
+            assertionFailure("fix me")
+            return
+        }
+        
+        _viewModel.saveLivePhoto(livePhoto)
     }
     
 }
