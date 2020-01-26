@@ -16,15 +16,14 @@ final class LPHomeDependencyContainer {
 
 extension LPHomeDependencyContainer {
 
-    func makeHomeNavigationController() -> LPBaseNavigationController {
+    func makeHomeViewController() -> LPHomeViewController {
         let api = LPLocalLivePhotosService()
         let storage = LPLocalPhotosStorage()
         let repository = LPLocalPhotosRepository(photosAPI: api, storage: storage)
         let viewModel = LPHomeViewModel(photosRepository: repository)
         
         let homeViewController = LPHomeViewController(viewModel: viewModel)
-        let navigationController = LPBaseNavigationController(rootViewController: homeViewController)
-        return navigationController
+        return homeViewController
     }
 
 }

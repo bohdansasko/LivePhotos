@@ -11,7 +11,12 @@ import PhotosUI
 import Photos
 
 final class LPPhotoViewCell: UICollectionViewCell {
+    
+    // MARK: - IBOutlets
+    
     @IBOutlet fileprivate weak var livePhotoView: LPLivePhotoView!
+    
+    // MARK: - Properties
     
     var livePhoto: PHLivePhoto? {
         set { livePhotoView.livePhoto = newValue }
@@ -20,9 +25,19 @@ final class LPPhotoViewCell: UICollectionViewCell {
 
     // MARK: - Lifecycle
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        livePhotoView.stopPlayback()
     }
 
+}
+
+// MARK: - Help animation methods
+
+extension LPPhotoViewCell {
+    
+    func hint() {
+        livePhotoView.startPlayback(with: .hint)
+    }
+    
 }

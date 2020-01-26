@@ -39,12 +39,7 @@ private extension LPHomeViewController {
     
     func setupUI() {
         rootView.set(viewModel: _viewModel)
-        setupNavigationBar()
         setupErrorSubscription()
-    }
-    
-    func setupNavigationBar() {
-        navigationController!.navigationBar.isHidden = true
     }
     
     func setupErrorSubscription() {

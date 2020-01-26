@@ -56,18 +56,7 @@ private extension LPHomeRootView {
         }
     }
     
-}
-
-// MARK: - Set
-
-extension LPHomeRootView {
-    
-    func set(viewModel: LPHomeViewModelAble) {
-        _viewModel = viewModel
-        
-        let flowLayout = photosCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.minimumInteritemSpacing = _viewModel.kPagePadding
-        
+    func setupSubscriptionsToViewModel() {
         _viewModel.isActivityIndicatorAnimation
             .bind(to: activityIndicator.rx.isAnimating)
             .disposed(by: _disposeBag)
@@ -77,6 +66,18 @@ extension LPHomeRootView {
                 self?.photosCollectionView.reloadData()
             })
             .disposed(by: _disposeBag)
+    }
+    
+}
+
+// MARK: - Set
+
+extension LPHomeRootView {
+    
+    func set(viewModel: LPHomeViewModelAble) {
+        _viewModel = viewModel
+        
+        setupSubscriptionsToViewModel()
     }
     
 }
@@ -100,7 +101,9 @@ extension LPHomeRootView: UICollectionViewDataSource {
 
 extension LPHomeRootView: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         let livePhoto = _viewModel.item(at: indexPath)
         guard let photoCell = cell as? LPPhotoViewCell else {
             assertionFailure("required")
@@ -109,8 +112,41 @@ extension LPHomeRootView: UICollectionViewDelegateFlowLayout {
         photoCell.livePhoto = livePhoto
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.bounds.size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return _viewModel.kPagePadding
+    }
+    
+}
+
+// MARK: - UIScrollView
+
+extension LPHomeRootView {
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        var contentOffset = scrollView.contentOffset
+        contentOffset.x += photosCollectionView.bounds.width / 2
+        guard let indexPath = photosCollectionView.indexPathForItem(at: contentOffset) else {
+            return
+        }
+        photosCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        guard let currentCell = photosCollectionView.visibleCells.first else {
+            assertionFailure("required")
+            return
+        }
+        guard let currentPhotoCell = currentCell as? LPPhotoViewCell else {
+            assertionFailure("required")
+            return
+        }
+        currentPhotoCell.hint()
     }
     
 }

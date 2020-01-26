@@ -115,6 +115,14 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		97179CEF23DDE5DE00625DA8 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				975BE5F423DDDC5F0003AD38 /* LPLivePhotoView.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		97348FF023CB5391006D8F16 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +179,7 @@
 				97348FFC23CB5391006D8F16 /* AppDelegate.swift */,
 				2084E51D23CD204F0018358E /* Logger.swift */,
 				97A4692923DC9EB000B26733 /* LPConstants.swift */,
+				97179CEF23DDE5DE00625DA8 /* CustomUI */,
 				9734901223CB57AB006D8F16 /* Screens */,
 				97C4475623CB8497009F22B5 /* DataLayer */,
 				97C4476223CB8DA0009F22B5 /* Extensions */,
@@ -182,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				975BE5FC23DDDC5F0003AD38 /* LPHomeDependencyContainer.swift */,
-				975BE5F423DDDC5F0003AD38 /* LPLivePhotoView.swift */,
 				975BE5F523DDDC5F0003AD38 /* View */,
 				975BE5F223DDDC5F0003AD38 /* ViewModel */,
 			);
@@ -202,9 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				975BE5F623DDDC5F0003AD38 /* PhotoCell */,
-				975BE5F923DDDC5F0003AD38 /* LPHomeViewController.xib */,
 				975BE5FA23DDDC5F0003AD38 /* LPHomeRootView.swift */,
 				975BE5FB23DDDC5F0003AD38 /* LPHomeViewController.swift */,
+				975BE5F923DDDC5F0003AD38 /* LPHomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

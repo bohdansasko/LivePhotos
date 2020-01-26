@@ -28,10 +28,10 @@ private extension AppDelegate {
     
     func setupWindow() {
         let dependencyContainer = LPHomeDependencyContainer()
-        let homeNavigationController = dependencyContainer.makeHomeNavigationController()
+        let homeViewController = dependencyContainer.makeHomeViewController()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = homeNavigationController
+        window!.rootViewController = homeViewController
         window!.makeKeyAndVisible()
     }
     
